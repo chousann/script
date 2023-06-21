@@ -22,4 +22,4 @@ bind_port = ${bind_port}
 token = ${token}
 EOF
 # 启动 frps
-nohup ./frps -c ./frpa.ini > run.log 2>&1 &
+nohup ./frps -c ./frps.ini > run.log 2>&1 &
