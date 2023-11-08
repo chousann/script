@@ -24,5 +24,5 @@ if [ "$flg" == 2 ];then
 	sed -i "s/Oauth2_ClientSecret/${nz_github_oauth_client_secret}/" data/config.yaml
 fi
 # 启动 nezha
-chmod -x app
+chmod 777 ./app
 ./app
