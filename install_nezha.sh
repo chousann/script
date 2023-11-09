@@ -25,4 +25,5 @@ if [ "$flg" == 2 ];then
 fi
 # 启动 nezha
 chmod 777 ./app
-./app
+nohup ./app > run.log 2>&1 &
+echo "结束"
