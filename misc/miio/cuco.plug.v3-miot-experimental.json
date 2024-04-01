@@ -1,0 +1,507 @@
+{
+	"deviceMapping": {
+		"id": [
+			"cuco.plug.v3"
+		],
+		"propertyMethod": "get_properties",
+		"maxProperties": 1,
+		"channels": [
+			{
+				"property": "",
+				"friendlyName": "Actions",
+				"channel": "actions",
+				"type": "String",
+				"stateDescription": {
+					"options": [
+						{
+							"value": "switch-toggle",
+							"label": "Switch Toggle"
+						}
+					]
+				},
+				"refresh": false,
+				"actions": [
+					{
+						"command": "action",
+						"parameterType": "EMPTY",
+						"siid": 2,
+						"aiid": 1,
+						"condition": {
+							"name": "matchValue",
+							"parameters": [
+								{
+									"matchValue": "switch-toggle"
+								}
+							]
+						}
+					}
+				]
+			},
+			{
+				"property": "on",
+				"siid": 2,
+				"piid": 1,
+				"friendlyName": "Switch - Switch Status",
+				"channel": "on",
+				"type": "Switch",
+				"refresh": true,
+				"actions": [
+					{
+						"command": "set_properties",
+						"parameterType": "ONOFFBOOL"
+					}
+				]
+			},
+			{
+				"property": "default-power-on-state",
+				"siid": 2,
+				"piid": 2,
+				"friendlyName": "Switch - Default Power On State",
+				"channel": "default_power_on_state",
+				"type": "Number",
+				"stateDescription": {
+					"minimum": 0,
+					"maximum": 2,
+					"step": 1,
+					"pattern": "%.0f"
+				},
+				"refresh": true,
+				"actions": [
+					{
+						"command": "set_properties",
+						"parameterType": "NUMBER"
+					}
+				]
+			},
+			{
+				"property": "fault",
+				"siid": 2,
+				"piid": 3,
+				"friendlyName": "Switch - Device Fault",
+				"channel": "fault",
+				"type": "Number",
+				"stateDescription": {
+					"readOnly": true,
+					"options": [
+						{
+							"value": "0",
+							"label": "No Faults"
+						},
+						{
+							"value": "1",
+							"label": "Over Temperature"
+						},
+						{
+							"value": "2",
+							"label": "Overload"
+						}
+					]
+				},
+				"refresh": true,
+				"actions": [],
+				"readmeComment": "Value mapping [\"0\"\u003d\"No Faults\",\"1\"\u003d\"Over Temperature\",\"2\"\u003d\"Overload\"]"
+			},
+			{
+				"property": "physical-controls-locked",
+				"siid": 7,
+				"piid": 1,
+				"friendlyName": "Physical Control Locked - Physical Control Locked",
+				"channel": "physical_controls_locked",
+				"type": "Switch",
+				"refresh": true,
+				"actions": [
+					{
+						"command": "set_properties",
+						"parameterType": "ONOFFBOOL"
+					}
+				]
+			},
+			{
+				"property": "power-consumption",
+				"siid": 11,
+				"piid": 1,
+				"friendlyName": "Power Consumption - Power Consumption",
+				"channel": "power_consumption",
+				"type": "Number",
+				"stateDescription": {
+					"minimum": 0,
+					"maximum": 65535,
+					"step": 1,
+					"pattern": "%.0f",
+					"readOnly": true
+				},
+				"refresh": true,
+				"actions": []
+			},
+			{
+				"property": "electric-power",
+				"siid": 11,
+				"piid": 2,
+				"friendlyName": "Power Consumption - Electric Power",
+				"channel": "electric_power",
+				"type": "Number:Power",
+				"unit": "watt",
+				"stateDescription": {
+					"minimum": 0,
+					"maximum": 10000,
+					"step": 1,
+					"pattern": "%.0f %unit%",
+					"readOnly": true
+				},
+				"refresh": true,
+				"actions": []
+			},
+			{
+				"property": "on1",
+				"siid": 13,
+				"piid": 1,
+				"friendlyName": "Indicator Light - Switch Status",
+				"channel": "on1",
+				"type": "Switch",
+				"refresh": true,
+				"actions": [
+					{
+						"command": "set_properties",
+						"parameterType": "ONOFFBOOL"
+					}
+				]
+			},
+			{
+				"property": "mode",
+				"siid": 3,
+				"piid": 2,
+				"friendlyName": "Indicator Light - Mode",
+				"channel": "mode",
+				"type": "Switch",
+				"refresh": true,
+				"actions": [
+					{
+						"command": "set_properties",
+						"parameterType": "ONOFFBOOL"
+					}
+				]
+			},
+			{
+				"property": "start-time",
+				"siid": 3,
+				"piid": 3,
+				"friendlyName": "Indicator Light - Start Time",
+				"channel": "start_time",
+				"type": "Number:Time",
+				"unit": "minutes",
+				"stateDescription": {
+					"minimum": 0,
+					"maximum": 1440,
+					"step": 1,
+					"pattern": "%.0f %unit%"
+				},
+				"refresh": true,
+				"actions": [
+					{
+						"command": "set_properties",
+						"parameterType": "STRING"
+					}
+				]
+			},
+			{
+				"property": "end-time",
+				"siid": 3,
+				"piid": 4,
+				"friendlyName": "Indicator Light - End Time",
+				"channel": "end_time",
+				"type": "Number:Time",
+				"unit": "minutes",
+				"stateDescription": {
+					"minimum": 0,
+					"maximum": 1440,
+					"step": 1,
+					"pattern": "%.0f %unit%"
+				},
+				"refresh": true,
+				"actions": [
+					{
+						"command": "set_properties",
+						"parameterType": "STRING"
+					}
+				]
+			},
+			{
+				"property": "on2",
+				"siid": 4,
+				"piid": 1,
+				"friendlyName": "Charging Protection - On",
+				"channel": "on2",
+				"type": "Switch",
+				"refresh": true,
+				"actions": [
+					{
+						"command": "set_properties",
+						"parameterType": "ONOFFBOOL"
+					}
+				]
+			},
+			{
+				"property": "power",
+				"siid": 4,
+				"piid": 2,
+				"friendlyName": "Charging Protection - Power",
+				"channel": "power",
+				"type": "Number",
+				"stateDescription": {
+					"minimum": 2,
+					"maximum": 10,
+					"step": 1,
+					"pattern": "%.0f"
+				},
+				"refresh": true,
+				"actions": [
+					{
+						"command": "set_properties",
+						"parameterType": "NUMBER"
+					}
+				]
+			},
+			{
+				"property": "protect-time",
+				"siid": 4,
+				"piid": 3,
+				"friendlyName": "Charging Protection - Protect Time",
+				"channel": "protect_time",
+				"type": "Number:Time",
+				"unit": "minutes",
+				"stateDescription": {
+					"minimum": 1,
+					"maximum": 10,
+					"step": 1,
+					"pattern": "%.0f %unit%"
+				},
+				"refresh": true,
+				"actions": [
+					{
+						"command": "set_properties",
+						"parameterType": "NUMBER"
+					}
+				]
+			},
+			{
+				"property": "status",
+				"siid": 5,
+				"piid": 1,
+				"friendlyName": "Cycle - Status",
+				"channel": "status",
+				"type": "Switch",
+				"refresh": true,
+				"actions": [
+					{
+						"command": "set_properties",
+						"parameterType": "ONOFFBOOL"
+					}
+				]
+			},
+			{
+				"property": "data-value",
+				"siid": 5,
+				"piid": 2,
+				"friendlyName": "Cycle - Data Value",
+				"channel": "data_value",
+				"type": "String",
+				"refresh": true,
+				"actions": [
+					{
+						"command": "set_properties",
+						"parameterType": "STRING"
+					}
+				]
+			},
+			{
+				"property": "on3",
+				"siid": 8,
+				"piid": 1,
+				"friendlyName": "Quick Countdown - On",
+				"channel": "on3",
+				"type": "Switch",
+				"refresh": true,
+				"actions": [
+					{
+						"command": "set_properties",
+						"parameterType": "ONOFFBOOL"
+					}
+				]
+			},
+			{
+				"property": "duration",
+				"siid": 8,
+				"piid": 2,
+				"friendlyName": "Quick Countdown - Duration",
+				"channel": "duration",
+				"type": "Number:Time",
+				"unit": "minutes",
+				"stateDescription": {
+					"minimum": 0,
+					"maximum": 1440,
+					"step": 1,
+					"pattern": "%.0f %unit%"
+				},
+				"refresh": true,
+				"actions": [
+					{
+						"command": "set_properties",
+						"parameterType": "STRING"
+					}
+				]
+			},
+			{
+				"property": "left-time",
+				"siid": 8,
+				"piid": 3,
+				"friendlyName": "Quick Countdown - Left Time",
+				"channel": "left_time",
+				"type": "Number:Time",
+				"unit": "minutes",
+				"stateDescription": {
+					"minimum": 0,
+					"maximum": 1440,
+					"step": 1,
+					"pattern": "%.0f %unit%"
+				},
+				"refresh": true,
+				"actions": [
+					{
+						"command": "set_properties",
+						"parameterType": "STRING"
+					}
+				]
+			},
+			{
+				"property": "on4",
+				"siid": 9,
+				"piid": 1,
+				"friendlyName": "Max Power Limit - On",
+				"channel": "on4",
+				"type": "Switch",
+				"refresh": true,
+				"actions": [
+					{
+						"command": "set_properties",
+						"parameterType": "ONOFFBOOL"
+					}
+				]
+			},
+			{
+				"property": "power1",
+				"siid": 9,
+				"piid": 2,
+				"friendlyName": "Max Power Limit - Power",
+				"channel": "power1",
+				"type": "Number:Power",
+				"unit": "watt",
+				"stateDescription": {
+					"minimum": 1500,
+					"maximum": 2500,
+					"step": 100,
+					"pattern": "%.0f %unit%"
+				},
+				"refresh": true,
+				"actions": [
+					{
+						"command": "set_properties",
+						"parameterType": "STRING"
+					}
+				]
+			},
+			{
+				"property": "on5",
+				"siid": 10,
+				"piid": 1,
+				"friendlyName": "Over Use Ele Alert - On",
+				"channel": "on5",
+				"type": "Switch",
+				"refresh": true,
+				"actions": [
+					{
+						"command": "set_properties",
+						"parameterType": "ONOFFBOOL"
+					}
+				]
+			},
+			{
+				"property": "over-ele-day",
+				"siid": 10,
+				"piid": 2,
+				"friendlyName": "Over Use Ele Alert - Over Ele Day",
+				"channel": "over_ele_day",
+				"type": "Number",
+				"stateDescription": {
+					"minimum": 1,
+					"maximum": 60,
+					"step": 1,
+					"pattern": "%.0f"
+				},
+				"refresh": true,
+				"actions": [
+					{
+						"command": "set_properties",
+						"parameterType": "STRING"
+					}
+				]
+			},
+			{
+				"property": "over-ele-month",
+				"siid": 10,
+				"piid": 3,
+				"friendlyName": "Over Use Ele Alert - Over Ele Month",
+				"channel": "over_ele_month",
+				"type": "Number",
+				"stateDescription": {
+					"minimum": 20,
+					"maximum": 1800,
+					"step": 20,
+					"pattern": "%.0f"
+				},
+				"refresh": true,
+				"actions": [
+					{
+						"command": "set_properties",
+						"parameterType": "STRING"
+					}
+				]
+			},
+			{
+				"property": "on-off-count",
+				"siid": 12,
+				"piid": 1,
+				"friendlyName": "On Off Count - On Off Count",
+				"channel": "on_off_count",
+				"type": "Number",
+				"stateDescription": {
+					"minimum": 0,
+					"maximum": 255,
+					"step": 1,
+					"pattern": "%.0f",
+					"readOnly": true
+				},
+				"refresh": true,
+				"actions": []
+			},
+			{
+				"property": "temperature",
+				"siid": 12,
+				"piid": 2,
+				"friendlyName": "On Off Count - Temperature",
+				"channel": "temperature",
+				"type": "Number:Temperature",
+				"unit": "celsius",
+				"stateDescription": {
+					"minimum": 0,
+					"maximum": 150,
+					"step": 1,
+					"pattern": "%.0f %unit%",
+					"readOnly": true
+				},
+				"refresh": true,
+				"actions": []
+			}
+		],
+		"experimental": true
+	}
+}
